@@ -1,65 +1,58 @@
-### Descrizione del codice contenuto nelle varie cartelle/notebook .
+## POLIcy Support systEm for smart citY data governancE
 
-Ogni notebook contiene commenti e descrizione del codice che spero siano abbastanza chiari e completti.
+### Project PolisEye - Code description .
 
-1-I DATI
+Every notebook already contains comments of the code that hopefully are well explained and described.
 
-Dati (aeroporto e Modena) da usare con il codice si trovano in questa cartella su Drive :
-: https://drive.google.com/drive/folders/1g3wISpUgCMOpDIFLXeqoCSVaw1Nw8hNG?usp=sharing
+1-The data (not included) cover the area of Bologna's aeroport and that of the city of Modena, Emilia Romagna, Italy.
 
+2- The Code
 
-2- IL CODICE
+The folders as below contain code for the following tasks:
 
-Il progetto su github(la repo è privata) si trova in questo link: https://github.com/alketcecaj12/poliseye
-
-La cartella (in seguito enummerate come in a, b, c):
-
-a- DataViz_ConfrontoMetodi contiene due notebook che fanno il confronto tra i metodi in base all'errore
-   di previsione 1Step e Multistep:
+a- DataViz_ConfrontoMetodi contains notebooks that read the prediction errors and display graphics for 1Step and Multistep forecasting:
 
     - CompareMethods_by_ForcastError_4_1StepPrediction.ipynb
     - CompareMethods_by_ForcastError_4_MultistepPrediction.ipynb
+    - ...
 
 
-b- EDA contiene
-   - notebook per sistemare i dati (valori anomali sostituiti con backfill e forward fill)
-     ad esempio il notebook FixData.ipynb
-   - notebook per visualizzare i dati in filisofia EDA
+b- EDA contains:
+   - a notebook that can ne used to fix the data and replace missing values by using backfill e forward fill methods.
+     as for example the notebook FixData.ipynb
+   - a notebook for exploring and visualizing data as in EDA
      ExplorativeDataAnalysis_1.ipynb
      ExplorativeDataAnalysis_Modena.ipynb
-   - scomposizione di serie temporali usando metodi di scomposizione
+   - Timeseries Decomposition using methods from the statsmodels library
      TimeseriesDecomposition.ipynb
-   - notebook per il calcolo della media (in base oraria e giornaliera) per poi usarla come predictor.
+   - notebook for computing the mean(on a hourly and daily basis) and using it as a predictor.
      DataAggregation_4_HeatMap_and_mean_computation.ipynb  
 
-c- DeepLearningModels contiene notebook per:
-   - previsone 1-step per serie univariate con reti neurali CNN, MLP e LSTM
-     come ad esempio il CNN_4_UnivariateSeries_1_Step_Forcast.ipynb
-   - previsone multistep per serie univariate con reti neurali CNN, MLP e LSTM
-     LSTM_4_UnivariateTimeseries_Multistep_forcast.ipynb
-   - previsone 1-step per serie multivariate con reti neurali CNN, MLP e LSTM
-     LSTM_4_MultivariateTimeseries_1_Step.ipynb
-   - previsone multistep per serie multivariate con reti neurali CNN, MLP e LSTM
+c- DeepLearningModels notebooks conain methods for:
+   - 1-step forcasting on univariate time series using neural networks as CNN, MLP e LSTM
+     like for example the notebook in CNN_4_UnivariateSeries_1_Step_Forcast.ipynb
+   - multistep forecasting for univariate time series by using neural networks like CNN, MLP e LSTM
+     An example can be found in LSTM_4_UnivariateTimeseries_Multistep_forcast.ipynb
+   - 1-step forecasting for multivariate time series with neural networks like CNN, MLP e LSTM
+     The following notebook contains an example LSTM_4_MultivariateTimeseries_1_Step.ipynb
+   - multistep forecasting for multivariate time series with CNN, MLP e LSTM
      CNN_4_Multivariate_multistep_time_series_forcast.ipynb
 
-d- img : contiene imagini e grafici
+d- Prophet : contains two notebooks with code using Facebook Prophet forecasting framework.
 
-e- Prophet : contiene due notebook  e il secondo
-   usa i dati per fare previsone.
-  - Prophet - Documentation and Example.ipynb  si riferisce alla documentazione (esempio)
-  - Prophet_On_Grid_Data.ipynb che usa Prophet per fare previsione sui dati
+  - Prophet - Documentation and Example.ipynb  uses example data to showcase predictions.
+  - Prophet_On_Grid_Data.ipynb this notebook uses Prophet for delivering predictions real data
 
-f-StatisticalMethods che contiene notebook per :
+e-StatisticalMethods contains notebooks implementing statistical forecasting methods :
 
   - MultivariateSeriesPrediction
-     previsione 1step usando metodi statistici come VAR
+     1step forecast for multivariate time series using statistical methods like VAR
   - UnivariateSeriesPrediction
-     previsone usando ARIMA, SARIMA, Exponetial Smothing, AR
-  - NaiveMethods :
-    Contiene metodi naive come autoregression e media stagionale
+     forecasting for univariate time series using ARIMA, SARIMA, Exponetial Smothing, AR
+  - NaiveMethods : naive methods like mean on daily basis or the mean on weekly basis to make predictions.
 
-g- SpatioTemporalCA: contiene notebook con metodi per l'analis spaziotemporale dei dati
-   - correlazione usando Pearson
-   - come la GrangerCausality
+f- SpatioTemporalCA: the notebooks contained in this folder deliver spatio-temporal analysis such as:
+   - Pearson correlation on cells
+   - Measure causality like Granger Causality between cells
    - Time Lagged Cross Correlation
-   - oppure Window Lagged Cross Correlation
+   - and Window Lagged Cross Correlation
