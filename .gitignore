@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.coverage
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data (the raw mobile phone data is not redistributable)
+data/raw/
+data/interim/
+*.parquet
+
+# OS
+.DS_Store
